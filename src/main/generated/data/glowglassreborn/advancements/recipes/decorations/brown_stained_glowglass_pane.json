@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_stained_glowglass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "glowglassreborn:brown_stained_glowglass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "glowglassreborn:brown_stained_glowglass_pane"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_stained_glowglass",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "glowglassreborn:brown_stained_glowglass_pane"
+    ]
+  },
+  "sends_telemetry_event": false
+}

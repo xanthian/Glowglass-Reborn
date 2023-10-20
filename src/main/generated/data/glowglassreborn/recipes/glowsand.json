@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:sand"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    " g ",
+    "gSg",
+    " g "
+  ],
+  "result": {
+    "item": "glowglassreborn:glowsand"
+  },
+  "show_notification": true
+}

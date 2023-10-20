@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:yellow_dye"
+    },
+    "G": {
+      "item": "glowglassreborn:glowglass"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GDG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "item": "glowglassreborn:yellow_stained_glowglass"
+  },
+  "show_notification": true
+}

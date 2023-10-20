@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:lime_dye"
+    },
+    "G": {
+      "item": "glowglassreborn:glowglass_pane"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GDG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "item": "glowglassreborn:lime_stained_glowglass_pane"
+  },
+  "show_notification": true
+}

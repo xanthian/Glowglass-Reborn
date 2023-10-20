@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:cyan_dye"
+    },
+    "G": {
+      "item": "glowglassreborn:glowglass_pane"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GDG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "item": "glowglassreborn:cyan_stained_glowglass_pane"
+  },
+  "show_notification": true
+}
