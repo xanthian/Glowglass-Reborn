@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "glowglassreborn:block/glowsand"
+      },
+      {
+        "model": "glowglassreborn:block/glowsand",
+        "y": 90
+      },
+      {
+        "model": "glowglassreborn:block/glowsand",
+        "y": 180
+      },
+      {
+        "model": "glowglassreborn:block/glowsand",
+        "y": 270
+      }
+    ]
+  }
+}
