@@ -1,12 +1,13 @@
 package net.xanthian.glowglassreborn.block.custom;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PaneBlock;
-
-public class GlowGlassPaneBlock extends PaneBlock {
+public class GlowGlassPaneBlock extends IronBarsBlock {
     public GlowGlassPaneBlock() {
-        super(FabricBlockSettings.copyOf(Blocks.GLASS_PANE).luminance(15));
+        super(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).lightLevel((p_50872_) -> {
+            return 15;
+        }));
     }
 }

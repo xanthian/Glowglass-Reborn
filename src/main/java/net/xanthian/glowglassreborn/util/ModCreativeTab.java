@@ -1,35 +1,36 @@
 package net.xanthian.glowglassreborn.util;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import net.xanthian.glowglassreborn.Initialise;
+import net.xanthian.glowglassreborn.block.ModBlocks;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class ModCreativeTab {
 
-    public static void registerGroup() {
-    }
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Initialise.MOD_ID);
 
-
-    public static final ItemGroup GGR = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Initialise.MOD_ID, "glowglass"),
-            FabricItemGroup.builder()
-                    .displayName(Text.literal("GlowGlass Reborn"))
-                    .icon(() -> new ItemStack(Registries.ITEM.get(new Identifier(Initialise.MOD_ID, "glowsand"))))
-                    .entries((context, entries) -> {
-                        entries.addAll(Registries.ITEM.getIds().stream()
+    public static final RegistryObject<CreativeModeTab> GGR_TAB = CREATIVE_MODE_TABS.register("glowglassreborn",
+            () -> CreativeModeTab.builder()
+                    .title(Component.literal("Glowglass Reborn"))
+                    .icon(() -> new ItemStack(ModBlocks.GLOWSAND.get()))
+                    .displayItems((context, entries) -> {
+                        entries.acceptAll(ForgeRegistries.ITEMS.getKeys()
+                                .stream()
                                 .filter(identifier -> identifier.getNamespace().equals(Initialise.MOD_ID))
-                                .sorted(Comparator.comparing(Identifier::getPath))
-                                .map(Registries.ITEM::get)
+                                .sorted(Comparator.comparing(ResourceLocation::getPath))
+                                .map(ForgeRegistries.ITEMS::getValue).filter(Objects::nonNull)
                                 .map(ItemStack::new)
                                 .filter(input -> !input.isEmpty())
                                 .toList());
