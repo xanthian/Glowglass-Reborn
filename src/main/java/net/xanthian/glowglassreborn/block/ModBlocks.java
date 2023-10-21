@@ -43,6 +43,6 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(Initialise.GGR)));
     }
 }

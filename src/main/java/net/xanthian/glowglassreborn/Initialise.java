@@ -3,6 +3,8 @@ package net.xanthian.glowglassreborn;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -11,12 +13,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
 import net.minecraftforge.registries.ForgeRegistries;
+
 import net.xanthian.glowglassreborn.block.GlowGlassEnum;
 import net.xanthian.glowglassreborn.block.ModBlocks;
 import net.xanthian.glowglassreborn.item.ModItems;
-import net.xanthian.glowglassreborn.util.ModCreativeTab;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
@@ -32,10 +35,17 @@ public class Initialise {
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlocks.registerGlassTypes();
         ModItems.ITEMS.register(modEventBus);
-        ModCreativeTab.CREATIVE_MODE_TABS.register(modEventBus);
+
 
         MinecraftForge.EVENT_BUS.register(this);
     }
+
+    public static final CreativeModeTab GGR = new CreativeModeTab(MOD_ID) {
+        @Override
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.GLOWSAND.get());
+        }
+    };
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents

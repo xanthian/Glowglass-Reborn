@@ -6,8 +6,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class GlowGlassPaneBlock extends IronBarsBlock {
     public GlowGlassPaneBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).lightLevel((p_50872_) -> {
-            return 15;
-        }));
+        super(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).lightLevel((p_50872_) -> 15));
     }
 }
